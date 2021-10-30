@@ -1,0 +1,24 @@
+---
+const items = ['Dog', 'Cat', 'Turtle'];
+const { content = 'Hi', name } = Astro.props;
+---
+
+<div>
+  <h2>I am a test component</h2>
+  <ul>
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+
+  <dl>
+    <dt>Content: </dt>
+    <dd>{content}</dd>
+    <dt>Name:</dt>
+    <dd>{name}</dd>
+  </dl>
+
+  <pre>
+    <slot></slot>
+  </pre>
+</div>
