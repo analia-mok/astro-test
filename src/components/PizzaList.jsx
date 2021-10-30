@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { createServer } from 'miragejs';
+import { makeServer } from '../mirage/index.js';
 
 export default function PizzaList() {
-  let server = createServer();
-  server.get('/api/pizzas', { pizzas: [{id: 1, name: 'Pepperoni'}]});
+  const environment = 'test';
+  makeServer({environment});
 
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
-    const data = fetch('/api/pizzas')
+    fetch('/api/pizzas')
       .then(res => res.json())
       .then(json => {
         setPizzas(json.pizzas)

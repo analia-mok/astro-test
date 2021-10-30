@@ -4,6 +4,7 @@
 // import Tour from '../components/Tour.astro';
 // import Test from '../components/Test.astro';
 // import TestReactComponent from '../components/TestReactComponent.jsx';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -17,22 +18,11 @@ let title = 'My Astro Site';
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/style/global.css">
-</head>
-<body>
-    <main>
-        <h1>Test Astro Site</h1>
-        <a href="/pizzas">Pizza List</a>
-        <!-- <Test content="hello" name="world">
-            <em>I am a child element</em>
-        </Test>
-        <TestReactComponent {...someProps} client:visible /> -->
-    </main>
-</body>
-</html>
+<DefaultLayout title={title}>
+    <h1>Test Astro Site</h1>
+    <a href="/pizzas">Pizza List</a>
+    <!-- <Test content="hello" name="world">
+        <em>I am a child element</em>
+    </Test>
+    <TestReactComponent {...someProps} client:visible /> -->
+</DefaultLayout>

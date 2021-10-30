@@ -1,22 +1,12 @@
 ---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 import PizzaList from '../components/PizzaList.jsx';
 
 let title = 'Pizzas';
 ---
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/style/global.css">
-</head>
-<body>
-    <main>
-        <h1>{title}</h1>
+<DefaultLayout title={title}>
+  <h1>{title}</h1>
 
-        <PizzaList client:load />
-    </main>
-</body>
-</html>
+  <PizzaList client:load />
+</DefaultLayout>
