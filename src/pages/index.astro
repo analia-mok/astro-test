@@ -5,6 +5,8 @@
 // import Test from '../components/Test.astro';
 // import TestReactComponent from '../components/TestReactComponent.jsx';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+import VehicleList from '../components/VehicleList.jsx';
+import ProductList from '../components/ProductList.jsx';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -25,4 +27,5 @@ let title = 'My Astro Site';
         <em>I am a child element</em>
     </Test>
     <TestReactComponent {...someProps} client:visible /> -->
+    <ProductList client:load />
 </DefaultLayout>

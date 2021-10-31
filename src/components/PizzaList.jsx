@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { makeServer } from '../mirage/index.js';
 
 export default function PizzaList() {
-  const environment = 'test';
-  makeServer({environment});
+  const environment = 'development';
+  const server = makeServer({ environment });
 
   const [pizzas, setPizzas] = useState([]);
 
