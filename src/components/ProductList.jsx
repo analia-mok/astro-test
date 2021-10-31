@@ -37,7 +37,11 @@ export default function ProductList() {
             }}>
               <article>
                 <img src={product.thumbnail} alt={product.name} style={{ display: 'block', width: '100%', height: 'auto' }} />
-                <h2>{product.name}</h2>
+                  <a href={`/product/${product.id}`}>
+                    <h2>
+                      {product.name}
+                    </h2>
+                  </a>
                 <span>${product.price}</span>
                 <div>
                   {product.description}

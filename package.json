@@ -12,8 +12,5 @@
     "astro": "^0.20.12",
     "faker": "^5.5.3",
     "miragejs": "^0.1.42"
-  },
-  "dependencies": {
-    "node-fetch": "^3.0.0"
   }
 }

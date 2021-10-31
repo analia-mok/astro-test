@@ -101,6 +101,11 @@ export function makeServer({ environment = 'test' }) {
 
       this.get('/vehicles', (schema, request) => schema.vehicles.all());
       this.get('/products', (schema, request) => schema.products.all());
+      this.get('/products/:id', (schema, request) => {
+        const id = request.params.id;
+
+        return schema.products.find(id);
+      });
     },
 
     seeds(server) {
@@ -117,4 +122,11 @@ export function makeServer({ environment = 'test' }) {
       server.createList('product', 15);
     }
   });
+}
+
+export async function fetchProducts() {
+  const response = await fetch('/api/products');
+  const data = await response.json();
+
+  return data.products;
 }

@@ -1,0 +1,25 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import { makeServer, fetchProducts } from '../../mirage/index.js';
+
+// FIXME: Fetch not defined from astro components/pages.
+export async function getStaticPaths() {
+  const environment = 'development';
+  const server = makeServer({ environment });
+
+  console.log(fetch);
+  const data = await fetchProducts();
+
+  return [
+    {params: { pid: '1' }},
+    {params: { pid: '2' }},
+    {params: { pid: '3' }},
+  ];
+}
+
+const {pid} = Astro.request.params;
+---
+
+<DefaultLayout>
+  <p>{pid}</p>
+</DefaultLayout>
